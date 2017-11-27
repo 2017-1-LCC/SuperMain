@@ -16,24 +16,24 @@ void iniciaPilha(nomeDaPilha *p) //serve também para listas e outros
 
 void excluirPosicao(Lista *L)
 {
-  printf("Entre com a posição que deseja remover: ");
-  scanf("%d", &remover);
-
-  if (remover > max-1)
-  {
-    printf("Opção inválida!\n");
-  } else
-  {
-    remover--;
-
-    auxMatricula= L-> matricula[remover];
-    auxNota= L-> nota[remover];
-
-    L-> matricula[remover+1]= L-> matricula[remover];
-    L-> nota[remover+1]= L-> nota[remover];
-
-    L-> matricula[L->i]= auxMatricula;
-    L-> nota[L->i]= auxNota;
-
-    L->i--;
- }
+	int aux;
+	int remover;
+	int i;
+	
+	printf("Entre com a posição que deseja remover: ");
+	scanf("%d", &remover);
+	
+	remover--;
+	
+	aux= t-> num[remover];	
+	
+	for (i=remover; i<tamanho; i++)
+	{
+		t-> num[i]= t-> num[i+1];
+	}
+	
+	t-> num[t->x]= aux;	
+	t-> x--;
+	
+	printf("Posição removida!");
+}
