@@ -9,13 +9,13 @@ main() {
 
 /* Raniel */
 
-void iniciaPilha(nomeDaPilha *p) //serve também para listas e outros
-{
+void iniciaPilha(nomeDaPilha *p) { //serve também para listas e outros
+	
 	p->topo= NULL;
 }
 
-void excluirPosicao(Lista *L)
-{
+void excluirPosicao(Lista *L) {
+	
 	int aux;
 	int remover;
 	int i;
@@ -25,15 +25,12 @@ void excluirPosicao(Lista *L)
 	
 	remover--;
 	
-	aux= t-> num[remover];	
-	
-	for (i=remover; i<tamanho; i++)
-	{
-		t-> num[i]= t-> num[i+1];
+	for (i=remover; i<L->indice; i++) {
+		
+		L-> num[i]= L-> num[i+1];
 	}
 	
-	t-> num[t->x]= aux;	
-	t-> x--;
+	L-> indice--;
 	
-	printf("Posição removida!");
+	printf("Posição removida! \n");
 }
